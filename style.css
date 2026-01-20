@@ -665,14 +665,14 @@ footer p{
     font-size: 1rem;
   }
 
-  .logo { font-size: 1rem; }
+  .logo { font-size: 1.6rem; }
 
   #hamburger { display: none; }
 
   .projects { margin-top: 3rem; }
 
-  .project img { height: 9rem; }
-  .project { height: auto; }
+  .project img { height: auto; }
+  .project { height: 29rem; }
 
   #contact {
     flex-direction: row;
