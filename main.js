@@ -3,7 +3,103 @@ const navBar = document.getElementById('navbar');
 const overlay = document.getElementById('overlay');
 const toggleBtn = document.getElementById('theme-toggle');
 const html = document.documentElement;
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+const stars = [];
+
+for (let i = 0; i < 200; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2,
+    speed: Math.random() * 0.5 + 0.2,
+    opacity: Math.random()
+  });
+}
+
+function drawStars() {
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
+    ctx.fill();
+
+    // Move downward
+    star.y += star.speed;
+
+    // Twinkle
+    star.opacity += (Math.random() - 0.5) * 0.03;
+    star.opacity = Math.max(0.2, Math.min(1, star.opacity));
+
+    // Reset when off screen
+    if (star.y > canvas.height) {
+      star.y = -5;
+      star.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function drawCloud(cloud) {
+  ctx.fillStyle = "rgba(245, 240, 255, 0.9)";
+
+  ctx.beginPath();
+
+  ctx.arc(cloud.x, cloud.y, 20, 0, Math.PI * 2);
+  ctx.arc(cloud.x + 20, cloud.y - 10, 25, 0, Math.PI * 2);
+  ctx.arc(cloud.x + 45, cloud.y, 20, 0, Math.PI * 2);
+  ctx.arc(cloud.x + 15, cloud.y + 10, 18, 0, Math.PI * 2);
+  ctx.arc(cloud.x + 35, cloud.y + 10, 18, 0, Math.PI * 2);
+
+  ctx.fill();
+}
+
+const clouds = [];
+
+for (let i = 0; i < 8; i++) {
+  clouds.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height * 0.7,
+    speed: Math.random() * 0.4 + 0.2
+  });
+}
+
+function drawClouds() {
+  clouds.forEach(cloud => {
+    drawCloud(cloud);
+
+    cloud.x += cloud.speed;
+
+    if (cloud.x > canvas.width + 70) {
+      cloud.x = -70;
+      cloud.y = Math.random() * canvas.height * 0.8;
+    }
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const theme = html.getAttribute("data-theme");
+
+  if (theme === "dark") {
+    drawStars();
+  } else {
+    drawClouds();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
 
 
 menuToggle.addEventListener('click', () => {
@@ -62,9 +158,6 @@ if (prefersDarkScheme.matches) {
   html.setAttribute("data-theme", "light");
   toggleBtn.innerHTML = sunSVG;
 }
-
-
-
 
 
 // Theme toggle
@@ -138,7 +231,4 @@ form.addEventListener("submit", function (e) {
 
 let year  = document.getElementById('year');
 
-year.textContent = new Date().getFullYear() 
-
-
-
+year.textContent = new Date().getFullYear()
