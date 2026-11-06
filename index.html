@@ -35,10 +35,11 @@
 
   <!-- Fonts + Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="Assets/myavatar.png" type="image/png" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <noscript><style>.animate{opacity:1}</style></noscript>
 
   <!-- Sitemap & Robots -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://thetechsteph.netlify.app/sitemap.xml">
@@ -83,64 +84,84 @@
   <!-- Structured Data (Portfolio Projects) -->
  <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "itemListElement": [
-    {
-      "@type": "CreativeWork",
-      "position": 1,
-      "name": "ClocknTime",
-      "url": "https://clockntime.netlify.app",
-      "description": "A digital clock with a built-in timer.",
-      "image": "https://thetechsteph.netlify.app/Assets/clockntime.jpg",
-      "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-    },
-    {
-      "@type": "CreativeWork",
-      "position": 2,
-      "name": "To-Do List Website",
-      "url": "https://personal-todo-list-website.netlify.app",
-      "description": "A simple task manager to add, delete, and organize daily tasks.",
-      "image": "https://thetechsteph.netlify.app/Assets/todolist.jpg",
-      "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-    },
-    {
-      "@type": "CreativeWork",
-      "position": 3,
-      "name": "My Portfolio",
-      "url": "https://thetechsteph.netlify.app",
-      "description": "My personal site showcasing my skills and projects.",
-      "image": "https://thetechsteph.netlify.app/Assets/myportfolio.jpg",
-      "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-    }
-     {
-      "@type": "CreativeWork",
-      "position": 4,
-      "name": "Netlify Landing Page Clone",
-      "url": "https://github.com/thetechsteph/Netlify-Landing-Page-Clone",
-      "description": "A responsive Netflix landing page clone built with html and css.",
-      "image": "https://thetechsteph.netlify.app/Assets/myportfolio.jpg",
-      "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-    }
-         {
-      "@type": "CreativeWork",
-      "position": 5,
-      "name": "WeatherNow",
-      "url": "https://weathernowproject.netlify.com",
-      "description": "A weather app that show real-time weather info for all cities.",
-      "image": "https://thetechsteph.netlify.app/Assets/myportfolio.jpg",
-      "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-    }
-         {
-       "@type": "CreativeWork",
-       "position": 6,
-       "name": "Ammas Solutions",
-       "url": "https://ammassolutions.com",
-       "description": "A trusted real estate and construction company in Mowe, Nigeria.",
-       "image": "https://thetechsteph.netlify.app/Assets/myportfolio.jpg",
-       "author": { "@id": "https://thetechsteph.netlify.app/#person" }
-     }
-  ]
+ "@context": "https://schema.org",
+ "@type": "ItemList",
+ "itemListElement": [
+  {
+   "@type": "CreativeWork",
+   "position": 1,
+   "name": "Ammas Solutions",
+   "description": "Business website for a real estate and construction company in Mowe, Ogun State, giving the company a professional online presence.",
+   "image": "https://thetechsteph.netlify.app/Assets/ammassolutions.png",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   },
+   "url": "https://ammassolutions.com"
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 2,
+   "name": "Diamondville Comprehensive Schools",
+   "description": "Website for a private Nursery, Primary and Secondary school in Mowe. Presents its history, programmes and facilities, with SEO, structured data, a Google Maps location and a parent feedback form.",
+   "image": "https://thetechsteph.netlify.app/Assets/diamondville.svg",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   }
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 3,
+   "name": "CRAY WEI",
+   "description": "A scroll-driven 3D web experience about crayfish, freshwater habitats and food culture, exploring real-time 3D rendering and animated storytelling.",
+   "image": "https://thetechsteph.netlify.app/Assets/craywei.svg",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   }
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 4,
+   "name": "WeatherNow",
+   "description": "A weather app that shows real-time conditions for any city.",
+   "image": "https://thetechsteph.netlify.app/Assets/weatherapp.png",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   },
+   "url": "https://weathernowproject.netlify.app"
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 5,
+   "name": "Expense Tracker",
+   "description": "A web app for tracking and managing daily expenses.",
+   "image": "https://thetechsteph.netlify.app/Assets/expensetracker.png",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   },
+   "url": "https://thetechsteph.github.io/Expense-tracker-JS-practice-project-"
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 6,
+   "name": "To-Do List Website",
+   "description": "A simple task manager to add, delete and organise daily tasks.",
+   "image": "https://thetechsteph.netlify.app/Assets/todolist.jpg",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   },
+   "url": "https://personal-todo-list-website.netlify.app"
+  },
+  {
+   "@type": "CreativeWork",
+   "position": 7,
+   "name": "Netflix Landing Page Clone",
+   "description": "A responsive Netflix landing page clone built to practise layout and CSS.",
+   "image": "https://thetechsteph.netlify.app/Assets/netflixclone.png",
+   "author": {
+    "@id": "https://thetechsteph.netlify.app/#person"
+   }
+  }
+ ]
 }
 </script>
   <link rel="me" href="https://x.com/thetechsteph">
@@ -160,7 +181,7 @@
       <div class="logo">Steph.</div>
       <button id="theme-toggle" aria-label="Toggle theme"></button>
     </div>
-    <button id="hamburger" aria-label="Toggle menu">&#9776;</button>
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbar">&#9776;</button>
     <nav class="navbar" id="navbar">
       <a href="#hero">Home</a>
       <a href="#about">About</a>
@@ -177,19 +198,15 @@
     <div class="hero-content">
       <div class="content">
         <div class="text">
-          <h1 class="animate fade-up delay-1">Hi, I'm Stephanie</h1>
+          <p class="eyebrow animate fade-in delay-1">The Tech Steph · @thetechsteph</p>
+          <h1 class="animate fade-up delay-1">Hi, I'm <span>Stephanie</span></h1>
           <h2 class="animate fade-in delay-2">Frontend Web Developer</h2>
-          <p class="animate fade-up delay-3">I build clean, responsive, and user-friendly websites.</p>
-        </div>
-        <div class="image">
-          <img src="Assets/myavatar.png" alt="Stephanie Dominic Avatar" class="avatar" loading="lazy">
-        </div>
-      </div>
-      <div class="ctabtns">
+          <p class="lead animate fade-up delay-3">I build clean, responsive, and user-friendly websites, and I'm growing toward full-stack development and AI.</p>
+          <div class="ctabtns">
         <a href="#projects" class="cta">View my Work</a>
-        <a href="#contact" class="cta">Contact Me</a>
+        <a href="#contact" class="cta ghost">Contact Me</a>
       </div>
-      <div class="social-links">
+          <div class="social-links">
         <a href="https://github.com/thetechsteph" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
            <a href="mailto:thetechsteph@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         <a href="https://x.com/thetechsteph" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -202,142 +219,104 @@
    <i class="fa-brands fa-linkedin"></i>
 </a>
       </div>
+        </div>
+        <div class="image"><img src="Assets/myavatar.png" alt="Stephanie Dominic Avatar" class="avatar" width="720" height="720" fetchpriority="high"></div>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about">
-    <article class="about-me">
-      <img class="profile-pic" src="Assets/myavatar.png" alt="Stephanie Dominic's Avatar" loading="lazy" />
-      <h2>About Me</h2>
-      <p>Hi, I’m Stephanie Dominic (The Tech Steph)— a front-end developer passionate about building clean, user-friendly web experiences. With 3+ years of coding, I enjoy turning ideas into reality. Beyond coding, I love reading and exploring new technologies as I grow toward full-stack development.</p>
-    </article>
-    <a href="#projects" class="about-cta">View my Work</a>
+    <div class="about-wrap">
+      <article class="about-me">
+        <span class="eyebrow">About me</span>
+        <h2>About Me</h2>
+       <p>I'm Stephanie Dominic, a frontend developer, STEM educator, and technology enthusiast interested in the intersection of technology, creativity, and problem-solving. My journey into tech started at a young age, and what began as curiosity has grown into a continuous pursuit of learning, building, and exploring what's possible with technology.</p>
+
+<p>I enjoy creating digital experiences, experimenting with new technologies, and turning ideas into functional products. Beyond development, I'm passionate about making technology more accessible through STEM education and youth innovation. From building web projects to mentoring young learners and participating in technology initiatives, I enjoy exploring technology from different perspectives.</p>
+
+<p>I'm currently expanding my knowledge of software development, exploring artificial intelligence, and working towards becoming a more versatile developer. I believe there's always something new to learn, something worth building, and another problem to solve.</p>
+        <a href="#projects" class="cta">View my Work</a>
+      </article>
+      <div class="about-photos animate fade-up">
+      <figure class="photo">
+        <img src="Assets/about-1.jpeg" alt="Stephanie working on a project" loading="lazy" width="600" height="750">
+        <figcaption>Present day</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="Assets/about-2.jpeg" alt="Stephanie with her tech community" loading="lazy" width="600" height="750">
+        <figcaption>The Beginning</figcaption>
+      </figure>
+    </div>
+    </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills">
-      <div class="skill">
-        <i class="fa-brands fa-html5"></i>
-        <p>HTML</p>
-        <div class="meter"><div class="meter-fill" data-percent="99.5"></div></div>
-      </div>
-      <div class="skill">
-        <i class="fa-brands fa-css3-alt"></i>
-        <p>CSS</p>
-        <div class="meter"><div class="meter-fill" data-percent="95"></div></div>
-      </div>
-      <div class="skill">
-        <i class="fa-brands fa-square-js"></i>
-        <p>JavaScript</p>
-        <div class="meter"><div class="meter-fill" data-percent="80"></div></div>
-      </div>
-      <div class="skill">
-        <i class="fab fa-react"></i>
-        <p>React</p>
-        <div class="meter"><div class="meter-fill" data-percent="70"></div></div>
-      </div>
-      <div class="skill">
-        <i class="fab fa-git-alt"></i>
-        <p>Git</p>
-        <div class="meter"><div class="meter-fill" data-percent="90"></div></div>
-      </div>
+    <div class="section-head"><span class="eyebrow">Toolkit</span><h2>My Skills</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group"><h3>Languages</h3><ul><li><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML</li><li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS</li><li><i class="fa-brands fa-square-js" aria-hidden="true"></i> JavaScript</li></ul></div>
+      <div class="skill-group"><h3>Frameworks &amp; Libraries</h3><ul><li><i class="fa-brands fa-react" aria-hidden="true"></i> React</li><li>React Three Fiber</li><li>Three.js</li><li>GSAP</li><li>Zustand</li></ul></div>
+      <div class="skill-group"><h3>Tools</h3><ul><li><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git</li><li><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</li></ul></div>
+      <div class="skill-group"><h3>Currently exploring</h3><ul><li>Full-stack development</li><li>Artificial intelligence</li></ul></div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
-    <h2>My Projects</h2>
-    
+    <div class="section-head"><span class="eyebrow">Selected work</span><h2>My Projects</h2></div>
     <div class="my-projects">
       <article class="project animate scale-up">
-        <img src="Assets/netflixclone.png" alt="Netflix Clone Screenshot" loading="lazy">
-        <div class="project-content">
-          <h3>Netflix Landing Page Clone</h3>
-          <p>A responsive Netflix landing page clone built with HTML and CSS</p>
-          <div class="technologies">
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-          </div>
-          <div class="project-links">
-            <a class='disabled' rel="noopener noreferrer">Live demo</a>
-            <a href="https://github.com/thetechsteph/Netflix-Landing-Page-Clone"rel="noopener noreferrer">Source Code</a>
-          </div>
-        </div>
-      </article>
-      
-      <article class="project animate scale-up">
-        <img src="Assets/weatherapp.png" alt="WeatherNow Screenshot" loading="lazy">
-        <div class="project-content">
-          <h3>WeatherNow</h3>
-          <p>A simple web app that shows real-time weather information for any city.</p>
-          <div class="technologies">
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-square-js"></i>
-          </div>
-          <div class="project-links">
-            <a href="https://weathernowproject.netlify.app" rel="noopener noreferrer">Live demo</a>
-            <a href="https://github.com/thetechsteph/WeatherNow" rel="noopener noreferrer">Source Code</a>
-          </div>
-        </div>
-        
-      </article>
-      
-       <article class="project animate scale-up">
-        <img src="Assets/ammassolutions.png" alt="Ammas Solutions Screenshot" loading="lazy">
+        <img src="Assets/ammassolutions.png" alt="Ammas Solutions website screenshot" loading="lazy" width="800" height="500">
         <div class="project-content">
           <h3>Ammas Solutions</h3>
-          <p>Real estate and construction company in Mowe, Ogun State.</p>
-          <div class="technologies">
-            <i class="fa-brands fa-html5"></i>
-            <i class="fa-brands fa-css3-alt"></i>
-            <i class="fa-brands fa-square-js"></i>
-          </div>
-          <div class="project-links">
-            <a href="https://ammassolutions.com" rel="noopener noreferrer">Live demo</a>
-            <a class="disabled"rel="noopener noreferrer">Source Code</a>
-          </div>
+          <span class="badge">Client project</span>
+          <p>Business website for a real estate and construction company in Mowe, Ogun State, giving the company a professional online presence.</p>
+          <div class="technologies" role="img" aria-label="Built with HTML, CSS and JavaScript"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-square-js"></i></div>
+          <div class="project-links"><a href="https://ammassolutions.com" target="_blank" rel="noopener noreferrer">Live demo</a><a class="disabled" aria-disabled="true">Source code</a></div>
         </div>
       </article>
-      
+      <article class="project animate scale-up">
+        <img src="Assets/diamondville.png" alt="Diamondville Comprehensive Schools website preview" loading="lazy" width="800" height="500">
+        <div class="project-content">
+          <h3>Diamondville Comprehensive Schools</h3>
+          <span class="badge">Client project</span>
+          <p>Website for a private Nursery, Primary and Secondary school in Mowe. Presents its history, programmes and facilities, with SEO, structured data, a Google Maps location and a parent feedback form.</p>
+          <div class="technologies" role="img" aria-label="Features: SEO, structured data, Google Maps and a parent feedback form"><span>SEO</span><span>Structured data</span><span>Google Maps</span><span>Feedback form</span></div>
+          <div class="project-links"><a href="https://diamondvilleschools.com/" target="_blank" rel="noopener noreferrer">Live demo</a><a class="disabled" aria-disabled="true">Source code</a></div>
+        </div>
+      </article>
+      <article class="project animate scale-up">
+        <img src="Assets/craywei.png" alt="CRAY WEI 3D experience preview" loading="lazy" width="800" height="500">
+        <div class="project-content">
+          <h3>CRAY WEI</h3>
+          <span class="badge">Experimental</span>
+          <p>A scroll-driven 3D web experience about crayfish, freshwater habitats and food culture, exploring real-time 3D rendering and animated storytelling.</p>
+          <div class="technologies" role="img" aria-label="Built with React, React Three Fiber, Three.js, GSAP and Zustand"><i class="fa-brands fa-react"></i><span>React Three Fiber</span><span>Three.js</span><span>GSAP</span><span>Zustand</span></div>
+          <div class="project-links"><a href="https://craywei.pxxlspace.cv/" target="_blank" rel="noopener noreferrer">Live demo</a><a class="disabled" aria-disabled="true">Source code</a></div>
+        </div>
+      </article>
+      <article class="project animate scale-up">
+        <img src="Assets/weatherapp.png" alt="WeatherNow screenshot" loading="lazy" width="800" height="500">
+        <div class="project-content">
+          <h3>WeatherNow</h3>
+          <span class="badge">Personal project</span>
+          <p>A weather app that shows real-time conditions for any city.</p>
+          <div class="technologies" role="img" aria-label="Built with HTML, CSS and JavaScript"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-square-js"></i></div>
+          <div class="project-links"><a href="https://weathernowproject.netlify.app" target="_blank" rel="noopener noreferrer">Live demo</a><a href="https://github.com/thetechsteph/WeatherNow" target="_blank" rel="noopener noreferrer">Source code</a></div>
+        </div>
+      </article>
 
- <article class="project animate scale-up">
-  <img src="Assets/expensetracker.png" alt="Expense Tracker Screenshot" loading="lazy">
-  <div class="project-content">
-    <h3>Expense Tracker</h3>
-    <p>A web app that helps users track and manage their daily expenses.</p>
-    <div class="technologies">
-      <i class="fa-brands fa-html5"></i>
-      <i class="fa-brands fa-css3-alt"></i>
-      <i class="fa-brands fa-square-js"></i>
-    </div>
-    <div class="project-links">
-      <a href="https://thetechsteph.github.io/Expense-tracker-JS-practice-project-" rel="noopener noreferrer">Live demo</a>
-      <a href="https://github.com/thetechsteph/Expense-tracker-JS-practice-project-" rel="noopener noreferrer">Source Code</a>
-    </div>
-  </div>
-</article>
-
-<article class="project animate scale-up">
-  <img src="Assets/todolist.jpg" alt="To-Do List App Screenshot" loading="lazy">
-  <div class="project-content">
-    <h3>To-Do List Website</h3>
-    <p>A simple task manager to add, delete, and organize daily tasks.</p>
-    <div class="technologies">
-      <i class="fa-brands fa-html5"></i>
-      <i class="fa-brands fa-css3-alt"></i>
-      <i class="fa-brands fa-square-js"></i>
-    </div>
-    <div class="project-links">
-      <a href="https://personal-todo-list-website.netlify.app" rel="noopener noreferrer">Live demo</a>
-      <a href="https://github.com/thetechsteph/Personal-ToDo-List-Website" rel="noopener noreferrer">Source Code</a>
-    </div>
-  </div>
-</article>
-
+      <article class="project animate scale-up">
+        <img src="Assets/netflixclone.png" alt="Netflix landing page clone screenshot" loading="lazy" width="800" height="500">
+        <div class="project-content">
+          <h3>Netflix Landing Page Clone</h3>
+          <span class="badge">Practice project</span>
+          <p>A responsive Netflix landing page clone built to practise layout and CSS.</p>
+          <div class="technologies" role="img" aria-label="Built with HTML and CSS"><i class="fa-brands fa-html5"></i><i class="fa-brands fa-css3-alt"></i></div>
+          <div class="project-links"><a class="disabled" aria-disabled="true">Live demo</a><a href="https://github.com/thetechsteph/Netflix-Landing-Page-Clone" target="_blank" rel="noopener noreferrer">Source code</a></div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -345,6 +324,7 @@
 <section id="contact">
     <div class="left-column">
       <div class="contact-info">
+        <span class="eyebrow">Get in touch</span>
         <h2>Contact Me</h2>
         <p>If you have any questions or want to work with me, feel free to reach out!</p>
       </div>
@@ -366,17 +346,18 @@
       <form action="https://formspree.io/f/mwpqwvgo" method="post">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" name="name" id="name" placeholder="Full Name" required />
+          <input type="text" name="name" autocomplete="name" id="name" placeholder="Full Name" required />
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" name="email" id="email" placeholder="Email Address" required />
+          <input type="email" name="email" autocomplete="email" id="email" placeholder="Email Address" required />
         </div>
         <div class="message-group">
           <label for="message">Your Message:</label>
           <textarea name="message" id="message" rows="5" required></textarea>
         </div>
         <button type="submit">Send Message</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>

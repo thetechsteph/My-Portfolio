@@ -5,6 +5,7 @@ const toggleBtn = document.getElementById('theme-toggle');
 const html = document.documentElement;
 const canvas = document.getElementById("bg-canvas");
 const ctx = canvas.getContext("2d");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -96,33 +97,33 @@ function animate() {
     drawClouds();
   }
 
-  requestAnimationFrame(animate);
+  if (!reduceMotion) requestAnimationFrame(animate);
 }
 
 animate();
 
 
+function closeMenu() {
+  navBar.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.classList.remove('no-scroll');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}
+
 menuToggle.addEventListener('click', () => {
-  navBar.classList.toggle('active');
+  const isOpen = navBar.classList.toggle('active');
   overlay.classList.toggle('active');
   document.body.classList.toggle('no-scroll');
+  menuToggle.setAttribute('aria-expanded', isOpen);
 });
-
 
 document.querySelectorAll('.navbar a').forEach(link => {
-  link.addEventListener('click', () => {
-    navBar.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-  });
+  link.addEventListener('click', closeMenu);
 });
-
 
 document.addEventListener('click', (e) => {
   if (!navBar.contains(e.target) && !menuToggle.contains(e.target)) {
-    navBar.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.classList.remove('no-scroll');
+    closeMenu();
   }
 });
 
@@ -151,27 +152,20 @@ const moonSVG = `
 
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-if (prefersDarkScheme.matches) {
-  html.setAttribute("data-theme", "dark");
-  toggleBtn.innerHTML = moonSVG;
-} else {
-  html.setAttribute("data-theme", "light");
-  toggleBtn.innerHTML = sunSVG;
+function setTheme(theme) {
+  html.setAttribute("data-theme", theme);
+  toggleBtn.innerHTML = theme === "dark" ? moonSVG : sunSVG;
+  try { localStorage.setItem("theme", theme); } catch (e) {}
 }
 
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("theme"); } catch (e) {}
+setTheme(savedTheme || (prefersDarkScheme.matches ? "dark" : "light"));
 
 // Theme toggle
 toggleBtn.addEventListener("click", () => {
-  const currentTheme = html.getAttribute("data-theme");
-  if (currentTheme === "dark") {
-    html.setAttribute("data-theme", "light");
-    toggleBtn.innerHTML = sunSVG;
-  } else {
-    html.setAttribute("data-theme", "dark");
-    toggleBtn.innerHTML = moonSVG;
-  }
+  setTheme(html.getAttribute("data-theme") === "dark" ? "light" : "dark");
 });
-
 
 
 const animatedItems = document.querySelectorAll('.animate');
@@ -200,35 +194,43 @@ animatedItems.forEach(item => {
   }
 });
 
-const meters = document.querySelectorAll('.meter-fill');
-
-const skillsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const percent = entry.target.getAttribute('data-percent');
-      entry.target.style.width = percent + '%';
-    } 
-  });
-}, { threshold: 0.5 });
-
-meters.forEach(meter => skillsObserver.observe(meter));
-
-
-
-
-
-
 const form = document.querySelector("form");
+const formStatus = document.getElementById("form-status");
 
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const button = form.querySelector("button");
+  button.disabled = true;
+  formStatus.textContent = "Sending...";
 
-form.addEventListener("submit", function (e) {
-  
-    setTimeout(() => {
-        
-        form.reset();
-    }, 1000); 
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    });
+
+    if (response.ok) {
+      form.reset();
+      formStatus.textContent = "Thank you! Your message has been sent.";
+    } else {
+      formStatus.textContent = "Something went wrong. Please try again or email me directly.";
+    }
+  } catch (error) {
+    formStatus.textContent = "Something went wrong. Please try again or email me directly.";
+  }
+
+  button.disabled = false;
 });
 
-let year  = document.getElementById('year');
+let year = document.getElementById('year');
 
-year.textContent = new Date().getFullYear()
+year.textContent = new Date().getFullYear();
+
+
+// Header gets a soft shadow once the page is scrolled
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+});
